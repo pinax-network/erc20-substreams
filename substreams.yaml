@@ -20,7 +20,7 @@ binaries:
 modules:
   - name: db_out
     kind: map
-    initialBlock: 20000000
+    initialBlock: 1
     inputs:
       - map: transfers:db_out
       - map: supply:db_out
