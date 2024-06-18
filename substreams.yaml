@@ -1,7 +1,7 @@
 specVersion: v0.1.0
 package:
   name: erc20_substreams
-  version: v0.0.1
+  version: v0.0.2
   url: https://github.com/pinax-network/substreams-erc20-substreams
   doc: ERC-20
 
