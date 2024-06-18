@@ -34,11 +34,11 @@ CREATE TABLE IF NOT EXISTS token_holders
     account              String,
     contract             String,
     amount               Int64,
-    updated_at_block_num UInt64,
-    updated_at_timestamp DateTime,
+    block_num            UInt64,
+    timestamp            DateTime,
     is_deleted           UInt8
 )
-    ENGINE = ReplicatedReplacingMergeTree(block_num, is_deleted)
+    ENGINE = ReplacingMergeTree(block_num, is_deleted)
         PRIMARY KEY (contract,account)
         ORDER BY (contract, account);
 
@@ -48,8 +48,8 @@ AS
 SELECT account,
        contract,
        amount,
-       block_num            AS updated_at_block_num,
-       timestamp            AS updated_at_timestamp,
+       block_num,
+       timestamp,
        if(amount > 0, 0, 1) AS is_deleted
 FROM balance_changes;
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS account_balances
     block_num            UInt32,
     is_deleted           UInt8
 )
-    ENGINE = ReplicatedReplacingMergeTree(block_num, is_deleted)
+    ENGINE = ReplacingMergeTree(block_num, is_deleted)
         PRIMARY KEY (account,contract)
         ORDER BY (account,contract);
 
@@ -71,8 +71,8 @@ AS
 SELECT account,
        contract,
        amount,
-       block_num            AS updated_at_block_num,
-       timestamp            AS updated_at_timestamp,
+       block_num,
+       timestamp,
        if(amount > 0, 0, 1) AS is_deleted
 FROM balance_changes;
 
