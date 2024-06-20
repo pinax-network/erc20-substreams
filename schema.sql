@@ -151,7 +151,7 @@ POPULATE
 AS SELECT * FROM transfers;
 
 -- MV for tx_id --
-CREATE MATERIALIZED VIEW transfers_to_historical_mv
+CREATE MATERIALIZED VIEW transfers_tx_id_historical_mv
 ENGINE = MergeTree()
 ORDER BY (`tx_id`, contract)
 POPULATE
