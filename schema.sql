@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS transfers  (
     `from` String,
     `to` String,
     value String,
-    transaction String,
+    tx_id String,
     block_num   UInt32(),
     timestamp       DateTime64(3, 'UTC'),
 )
@@ -147,5 +147,12 @@ AS SELECT * FROM transfers;
 CREATE MATERIALIZED VIEW transfers_to_historical_mv
 ENGINE = MergeTree()
 ORDER BY (`to`, contract)
+POPULATE
+AS SELECT * FROM transfers;
+
+-- MV for tx_id --
+CREATE MATERIALIZED VIEW transfers_to_historical_mv
+ENGINE = MergeTree()
+ORDER BY (`tx_id`, contract)
 POPULATE
 AS SELECT * FROM transfers;
