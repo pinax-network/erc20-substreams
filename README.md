@@ -52,13 +52,13 @@ https://mermaid.live/edit#pako:eJy0WM1u2zAMfhVD58botpt32_oG260ODNVmkyC2bOgnW1D03
 ```yaml
 
 Name: db_out
-Initial block: 20000000
+Initial block: 1
 Kind: map
 Input: map: transfers:db_out
 Input: map: supply:db_out
 Input: map: contracts:db_out
 Input: map: balances:balance_changes:db_out
 Output Type: proto:sf.substreams.sink.database.v1.DatabaseChanges
-Hash: a8aeff108a2dd5c82f0eba307d78fe7ce1b0df94
+Hash: d8ba3181b050a2065e91c0278c2023884cbac019
 
 ```
