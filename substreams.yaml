@@ -9,9 +9,9 @@ imports:
   sql: https://github.com/streamingfast/substreams-sink-sql/releases/download/protodefs-v1.0.7/substreams-sink-sql-protodefs-v1.0.7.spkg
   database_change: https://github.com/streamingfast/substreams-sink-database-changes/releases/download/v1.3.1/substreams-database-change-v1.3.1.spkg
   transfers: https://github.com/pinax-network/substreams-erc20-transfers/releases/download/v0.1.4/erc20Transfers-v0.1.4.spkg
-  supply: https://github.com/pinax-network/substreams-erc20-supply/releases/download/v0.1.6/erc20-supply-v0.1.6.spkg
-  contracts: https://github.com/pinax-network/substreams-erc20-contracts/releases/download/v0.1.6/erc20-contracts-v0.1.6.spkg
-  balances: https://github.com/pinax-network/substreams-erc20-balance-changes/releases/download/v1.2.2/erc20-balance-changes-v1.2.2.spkg
+  supply: https://github.com/pinax-network/substreams-erc20-supply/releases/download/v0.1.7/erc20-supply-v0.1.7.spkg
+  contracts: https://github.com/pinax-network/substreams-erc20-contracts/releases/download/v0.1.8/erc20-contracts-v0.1.8.spkg
+  balance_changes: https://github.com/pinax-network/substreams-erc20-balance-changes/releases/download/v1.3/erc20-balance-changes-v1.3.spkg
 binaries:
   default:
     type: wasm/rust-v1
@@ -25,7 +25,7 @@ modules:
       - map: transfers:db_out
       - map: supply:db_out
       - map: contracts:db_out
-      - map: balances:balance_changes:db_out
+      - map: balance_changes:db_out
     output:
       type: proto:sf.substreams.sink.database.v1.DatabaseChanges
 
